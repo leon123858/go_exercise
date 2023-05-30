@@ -1,0 +1,5 @@
+HOST = 'data-api-7y2p6sn7aa-de.a.run.app'
+postgresHost = '35.194.204.4'
+postgresUser = 'postgres'
+postgresDB = 'postgres'
+postgresPort = 5432

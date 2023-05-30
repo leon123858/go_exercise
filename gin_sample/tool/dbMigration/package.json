@@ -1,0 +1,16 @@
+{
+	"name": "dbmigration",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "bash index.sh",
+		"migrate": "node-pg-migrate"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"node-pg-migrate": "^6.2.2",
+		"pg": "^8.11.0"
+	}
+}

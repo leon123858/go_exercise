@@ -1,0 +1,6 @@
+HOST = 'localhost:8080'
+postgresHost = '127.0.0.1'
+postgresUser = 'postgres'
+postgresPassword = '0000'
+postgresDB = 'postgres'
+postgresPort = 5432

@@ -1,0 +1,176 @@
+{
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "swagger": "2.0",
+    "info": {
+        "description": "This is the API server about data access for CMA system",
+        "title": "CMA data api",
+        "contact": {
+            "name": "system designer",
+            "url": "https://github.com/leon123858/committee-meeting-assistan",
+            "email": "a0970785699@gmail.com"
+        },
+        "version": "0.0.1"
+    },
+    "paths": {
+        "/albums": {
+            "get": {
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "description": "get list of albums",
+                "tags": [
+                    "album"
+                ],
+                "summary": "albums example",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/model.Album"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/model.Album"
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "description": "post list of albums",
+                "tags": [
+                    "album"
+                ],
+                "summary": "postAlbums adds an album from JSON received in the request body.",
+                "parameters": [
+                    {
+                        "description": "album 實體結構, id 不用",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/model.Album"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/utils.Config"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/utils.Config"
+                        }
+                    }
+                }
+            }
+        },
+        "/albums/{id}": {
+            "get": {
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "description": "parameter sent by the client, then returns that album as a response.",
+                "tags": [
+                    "album"
+                ],
+                "summary": "getAlbumByID locates the album whose ID value matches the id",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "要抓的目標的 id ,唯一編號",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/model.Album"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "model.Album": {
+            "type": "object",
+            "required": [
+                "artist",
+                "price",
+                "title"
+            ],
+            "properties": {
+                "artist": {
+                    "description": "這裡的註解會進到 swagger",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "唯一編號",
+                    "type": "string"
+                },
+                "price": {
+                    "type": "number"
+                },
+                "title": {
+                    "description": "標題",
+                    "type": "string"
+                }
+            }
+        },
+        "utils.Config": {
+            "type": "object",
+            "required": [
+                "host"
+            ],
+            "properties": {
+                "dsn": {
+                    "type": "string"
+                },
+                "host": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "securityDefinitions": {
+        "Bearer": {
+            "description": "Type your api key",
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
+        }
+    }
+}
