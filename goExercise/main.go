@@ -1,29 +1,31 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-type node struct{
+type node struct {
 	value int
-	next *node
+	next  *node
 }
 
-type stack struct{
+type stack struct {
 	header *node
-	ender * node
+	ender  *node
 }
 
-func push(st *stack,value int){
-
-}
-
-func reverse(source *string){
+func push(st *stack, value int) {
 
 }
 
-func main(){
+func reverse(source *string) {
+
+}
+
+func main() {
+
 	fmt.Println("Start!")
 	var height string
 	fmt.Scanln(&height)
 
-	
 }
