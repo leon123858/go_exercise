@@ -23,7 +23,7 @@ func reverse(source *string) {
 }
 
 func main() {
-	GoSamplePackage.Echo("Hello World!", "Hello World!")
+
 	fmt.Println("Start!")
 	var height string
 	fmt.Scanln(&height)
