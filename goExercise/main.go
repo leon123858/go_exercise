@@ -2,7 +2,8 @@ package main
 
 import (
 	"fmt"
-	mySamplePackage "github.com/leon123858/go_exercise/mypackage"
+
+	"github.com/leon123858/goSamplePackage"
 )
 
 type node struct {
@@ -24,7 +25,7 @@ func reverse(source *string) {
 }
 
 func main() {
-	mySamplePackage.Fib(0)
+	println(goSamplePackage.Fibonacci(15)) 
 	fmt.Println("Start!")
 	var height string
 	fmt.Scanln(&height)

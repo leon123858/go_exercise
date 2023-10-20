@@ -1,10 +1,7 @@
 module project
 
-go 1.16
+go 1.21.1
 
-require (
-	github.com/gofrs/uuid v4.0.0+incompatible
-	github.com/leon123858/go_exercise v0.0.1 // indirect
-)
+require github.com/leon123858/goSamplePackage v0.0.2
 
 replace project/say => ./say
