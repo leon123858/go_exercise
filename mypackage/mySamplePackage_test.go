@@ -31,6 +31,11 @@ func TestFib(t *testing.T) {
 			args: args{num: 10},
 			want: 55,
 		},
+		{
+			name: "Fib(15)",
+			args: args{num: 15},
+			want: 610,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
